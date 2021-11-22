@@ -2,7 +2,7 @@ import {useHttp} from '../../hooks/http.hook';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { heroesFetching, heroesFetched, heroesFetchingError } from '../../actions';
+import { heroesFetching, heroesFetched, heroesFetchingError, heroesDeleteHero } from '../../actions';
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from '../spinner/Spinner';
 
@@ -31,13 +31,31 @@ const HeroesList = () => {
         return <h5 className="text-center mt-5">Ошибка загрузки</h5>
     }
 
+    const onRemoveHero = (e) => {
+        if (window.confirm(`Вы уверены что хотите удалить героя ${e.target.getAttribute('data-name')}?`)) {
+            const heroId = +e.target.getAttribute('data-id');
+            
+                
+            request(`http://localhost:3001/heroes/${heroId}`, 'DELETE')
+                .then(()=>{
+                    const position = heroes.findIndex(elem => elem.id === heroId);
+                    const newHeroes = [...heroes.slice(0, position), ...heroes.slice(position+1)];
+                    dispatch(heroesDeleteHero(newHeroes))
+                })
+                .catch(() => window.alert('Ошибка! Не удалось удалить персонажа'))
+        }
+        
+    }
+
     const renderHeroesList = (arr) => {
         if (arr.length === 0) {
             return <h5 className="text-center mt-5">Героев пока нет</h5>
         }
 
         return arr.map(({id, ...props}) => {
-            return <HeroesListItem key={id} {...props}/>
+            return <HeroesListItem 
+                        key={id} id={id} {...props} onRemoveHero={(e)=>onRemoveHero(e)}
+                        />
         })
     }
 
