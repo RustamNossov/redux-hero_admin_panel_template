@@ -1,29 +1,55 @@
 {
-    "heroes": [
-        {
-            "id": 1,
-            "name": "Первый герой",
-            "description": "Первый герой в рейтинге!",
-            "element": "fire"
-        },
-        {
-            "id": 2,
-            "name": "Неизвестный герой",
-            "description": "Скрывающийся в тени",
-            "element": "wind"
-        },
-        {
-            "id": 3,
-            "name": "Морской герой",
-            "description": "Как аквамен, но не из DC",
-            "element": "water"
-        }
-    ],
-    "filters": [
-        "all",
-        "fire",
-        "water",
-        "wind",
-        "earth"
-    ]
+  "heroes": [
+    {
+      "id": 1,
+      "name": "Первый герой",
+      "description": "Первый герой в рейтинге!",
+      "element": "fire"
+    },
+    {
+      "name": "Морской герой",
+      "description": "Как аквамен, но не из DC",
+      "element": "water",
+      "id": "f6d75fd1-bd0e-474d-a6e8-7babc80ebfa0"
+    },
+    {
+      "name": "Герой земли",
+      "description": "Силу герою придает земля",
+      "element": "earth",
+      "id": "81dc0943-1c8c-481e-b9da-733fcc5c39e6"
+    },
+    {
+      "name": "Ветренный герой",
+      "description": "Только небо только ветер",
+      "element": "wind",
+      "id": "d40ff983-0377-4873-ba04-f04b86ed4927"
+    }
+  ],
+  "filters": [
+    {
+      "option": "all",
+      "russian": "Я владею элементом...",
+      "clazzForFilter": "btn-outline-dark"
+    },
+    {
+      "option": "fire",
+      "russian": "Огонь",
+      "clazzForFilter": "btn-danger"
+    },
+    {
+      "option": "water",
+      "russian": "Вода",
+      "clazzForFilter": "btn-primary"
+    },
+    {
+      "option": "wind",
+      "russian": "Ветер",
+      "clazzForFilter": "btn-success"
+    },
+    {
+      "option": "earth",
+      "russian": "Земля",
+      "clazzForFilter": "btn-secondary"
+    }
+  ]
 }

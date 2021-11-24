@@ -23,3 +23,19 @@ export const heroesDeleteHero = (heroes) => {
         payload: heroes
     }
 }
+
+export const heroesFilterHeroes = (filters) => {
+    return {
+        type: 'HEROES_FILTERED',
+        payload: filters
+    }
+}
+
+export const heroesSetFilterList = (filterList) => {
+    return {
+        type: 'SET_FILTER_LIST',
+        payload: filterList
+    }
+}
+
+
