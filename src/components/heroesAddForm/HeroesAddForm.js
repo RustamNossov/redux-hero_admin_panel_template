@@ -24,6 +24,9 @@ const HeroesAddForm = () => {
     const dispatch = useDispatch()
     const {request} = useHttp();
 
+    const [heroName, setHeroName] = useState('')
+    const [heroDesc, setHeroDesc] = useState('')
+    const [heroElem, setHeroElem] = useState('')
    
     useEffect(()=>{
         setOptns(
@@ -93,10 +96,12 @@ const HeroesAddForm = () => {
                             className="form-control" 
                             id="name" 
                             placeholder="Как меня зовут?"
+                            value={heroName}
+                            onChange={(e)=>setHeroName(e.target.value)}
                             />
                         <ErrorMessage className="error" name="name" component="div"/>
                     </div>
-
+                   
                     <div className="mb-3">
                         <label htmlFor="text" className="form-label fs-4">Описание</label>
                         <Field
@@ -109,6 +114,8 @@ const HeroesAddForm = () => {
                             placeholder="Что я умею?"
                             maxLength="50"
                             style={{"height": '130px'}}
+                            value={heroDesc}
+                            onChange={(e)=>setHeroDesc(e.target.value)}
                             />
                         <ErrorMessage className="error" name="description" component="div"/>
                     </div>
@@ -119,7 +126,9 @@ const HeroesAddForm = () => {
                             as="select"
                             className="form-select" 
                             id="element" 
-                            name="element">
+                            name="element"
+                            value={heroElem}
+                            onChange={(e)=>setHeroElem(e.target.value)}>
                                 {optns}
                         </Field>
                         <ErrorMessage className="error" name="element" component="div"/>

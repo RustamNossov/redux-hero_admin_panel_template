@@ -47,6 +47,9 @@ const HeroesList = () => {
             request(`http://localhost:3001/heroes/${heroId}`, 'DELETE')
                 .then(()=>{
                     
+                    
+                })
+                .then(()=>{
                     const position = heroes.findIndex(elem => elem.id === heroId);
                     const newHeroes = [...heroes.slice(0, position), ...heroes.slice(position+1)];
                     dispatch(heroesDeleteHero(newHeroes))

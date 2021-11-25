@@ -5,6 +5,7 @@ const initialState = {
     filtersList: [],
 }
 
+
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'HEROES_FETCHING':

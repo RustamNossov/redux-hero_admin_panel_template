@@ -23,6 +23,12 @@
       "description": "Только небо только ветер",
       "element": "wind",
       "id": "d40ff983-0377-4873-ba04-f04b86ed4927"
+    },
+    {
+      "name": "sf",
+      "description": "sdfsdfasdfasdfasf",
+      "element": "fire",
+      "id": "95a5a034-8890-46fb-8daf-a5451cc674c0"
     }
   ],
   "filters": [
